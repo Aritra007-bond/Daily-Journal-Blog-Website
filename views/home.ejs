@@ -1,0 +1,40 @@
+<%- include("./partials/header");-%>
+
+<h1>Home</h1>
+<p><%= StartingContent %></p>
+
+
+
+   <!-- for(var i = 0; i< posts.length ; i++){   -->
+  <!-- alternative of for loop is forEach function
+
+  e.g
+  var fruits = ["apple","banana","cherry"];
+
+  fruits.forEach(function(fruit){
+    console.log(fruit);
+  }) -->
+
+  <!-- output =
+       apple
+       banana
+  cherry -->
+
+
+ <% posts.forEach(function(post){ %>
+  <h1><%= post.title  %></h1>
+ <p>
+   <%= post.content.substring(0,100)+" ..."  %>
+  <!-- substring is used  truncate the string or reduce it to want to show as much as needed. -->
+  <a href="/posts/<%=post._id%>">Read More</a>
+ </p>
+  <% });  %>
+
+
+
+
+
+
+
+
+  <%- include("partials/footer"); -%>
