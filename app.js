@@ -93,6 +93,16 @@ app.get("/posts/:postId", function(req,res){  //routing in node.js
  //})
 });
 
+app.get("/contact" ,  function(req,res){
+
+  res.render("contact" , {contactContent: contactContent })
+})
+
+app.get("/about" ,  function(req,res){
+
+  res.render("about", {aboutContent:aboutContent})
+})
+
 
 
 app.listen(3000, function() {
